@@ -1,7 +1,7 @@
 ---@class AfflictedSpells
 AfflictedSpells =
 {
-    version = 5;
+    version = 6;
     spells = {
         -- Death Knight
         -- Strangulate
