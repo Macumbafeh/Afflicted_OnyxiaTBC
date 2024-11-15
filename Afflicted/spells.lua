@@ -1,7 +1,7 @@
 ---@class AfflictedSpells
 AfflictedSpells =
 {
-    version = 6;
+    version = 7;
     spells = {
         -- Death Knight
         -- Strangulate
@@ -372,28 +372,28 @@ AfflictedSpells =
         -- Hex
         [51514] = "{cooldown=45;cdDisabled=true;cdAnchor='spells';class='SHAMAN'}",
         -- Frost Shock
-		[8056] = 10414,
-		[8058] = 10414,
-		[10472] = 10414,
-		[10473] = 10414,
-		[25464] = 10414,
+		[8056] = 8042,
+		[8058] = 8042,
+		[10472] = 8042,
+		[10473] = 8042,
+		[25464] = 8042,
 		-- Flame Shock
-		[8050] = 10414,
-		[8052] = 10414,
-		[8053] = 10414,
-		[10447] = 10414,
-		[10448] = 10414,
-		[29228] = 10414,
-		[25457] = 10414,
+		[8050] = 8042,
+		[8052] = 8042,
+		[8053] = 8042,
+		[10447] = 8042,
+		[10448] = 8042,
+		[29228] = 8042,
+		[25457] = 8042,
 		-- Earth Shock
-		[8042] = 10414,
-		[8044] = 10414,
-		[8045] = 10414,
-		[8046] = 10414,
-		[10412] = 10414,
-		[10413] = 10414,
-		[25454] = 10414,
-		[10414] = "{cooldown=5;cdAnchor='interrupts';class='SHAMAN';}",
+		[10414] = 8042,
+		[8044] = 8042,
+		[8045] = 8042,
+		[8046] = 8042,
+		[10412] = 8042,
+		[10413] = 8042,
+		[25454] = 8042,
+		[8042] = "{cooldown=5;cdAnchor='interrupts';class='SHAMAN';}",
         -- Heroism
 		[32182] = "{type='buff';duration=40;anchor='buffs';cooldown=600;cdAnchor='cooldowns';class='SHAMAN';}",
 		-- Bloodlust
