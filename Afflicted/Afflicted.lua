@@ -302,13 +302,18 @@ end
 
 -- Reset spells
 function Afflicted:ResetCooldowns(sourceGUID, resets)
-    for spellID in pairs(resets) do
+    for _, spellID in ipairs(resets) do
+        -- print("Resetting cooldown for spell ID:", spellID)
         local spellData = Afflicted.spells[spellID]
-        if ( spellData and spellData.cdAnchor ) then
+        -- if (spellData) then
+           -- print("Spell data found:", spellData)
+        -- end
+        if (spellData and spellData.cdAnchor) then
             self[self.db.profile.anchors[spellData.cdAnchor].display]:RemoveTimerByID(sourceGUID .. spellID .. "CD")
         end
     end
 end
+
 
 -- Timer started
 function Afflicted:AbilityTriggered(sourceGUID, sourceName, spellData, spellID)
