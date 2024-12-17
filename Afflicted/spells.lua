@@ -1,7 +1,7 @@
 ---@class AfflictedSpells
 AfflictedSpells =
 {
-    version = 8;
+    version = 9;
     spells = {
         -- Death Knight
         -- Strangulate
@@ -143,18 +143,12 @@ AfflictedSpells =
         [61336] = "{duration=20;anchor='defenses';cooldown=300;cdDisabled=true;cdAnchor='cooldowns';class='DRUID';}",
         -- Berserk
         [50334] = "{duration=15;anchor='damage';cooldown=180;cdDisabled=true;cdAnchor='cooldowns';class='DRUID';}",
-        -- Innervate
-        [29166] = "{type='buff';disabled=true;duration=10;anchor='buffs';cooldown=180;cdDisabled=true;cdAnchor='cooldowns';class='DRUID';}",
         -- Frenzied Regeneration
         [22842] = "{duration=10;anchor='defenses';cooldown=180;cdDisabled=true;cdAnchor='cooldowns';class='DRUID';}",
         -- Feral Charge - Bear
         [16979] = "{cooldown=15;cooldownName='feral';cdAnchor='interrupts';class='DRUID';}",
         -- Feral Charge - Cat
         [49376] = "{cooldown=30;cooldownName='feral';cdAnchor='spells';class='DRUID';}",
-		-- Bash
-		[5211] = 8983,
-		[6798] = 8983,
-		[8983] = "{cooldown=60;cdAnchor='interrupts';class='DRUID';}",
 		-- Nature's Grasp
 		[16689] = 17329,
 		[16810] = 17329,
@@ -171,8 +165,6 @@ AfflictedSpells =
 		[22895] = 22896,
 		[26999] = 22896,
 		[22896] = "{type='buff';duration=10;anchor='buffs';cooldown=180;cdDisabled=true;cdAnchor='cooldowns';class='DRUID';}",
-		-- Feral Charge - Bear
-		[16979] = "{cooldown=15;cdAnchor='interrupts';class='DRUID';}",
 		-- Bash
 		[5211] = 8983,
 		[6798] = 8983,
@@ -551,9 +543,7 @@ AfflictedSpells =
         [44572] = "{cooldown=30;cdAnchor='spells';class='MAGE';}",
         -- Icy Veins
 		[12472] = "{type='buff';duration=20;anchor='buffs';cooldown=180;cdAnchor='cooldowns';class='MAGE';}",
-		-- Invisibility
-        [66] = "{disabled=true;duration=23;anchor='defenses';cooldown=180;cdDisabled=true;cdAnchor='cooldowns';class='MAGE';}",
-        -- Ice Block
+		-- Ice Block
 		[45438] = "{type='buff';duration=10;anchor='defenses';cooldown=240;cdAnchor='cooldowns';class='MAGE';}",
 		-- Counterspell
 		[2139] = "{cooldown=24;cdAnchor='interrupts';class='MAGE';}",
@@ -654,9 +644,7 @@ AfflictedSpells =
 		[408] = 8643,
 		[8643] = "{cooldown=20;cdAnchor='interrupts';class='ROGUE';}",
         --[51713] = "{duration=10;anchor='damage';cooldown=120;cdDisabled=true;cdAnchor='cooldowns';class='ROGUE';}",
-        -- Shadow Step
-        [36554] = "{disabled=true;duration=3;anchor='buffs';cooldown=30;cdAnchor='cooldowns';class='ROGUE';}",
-       -- Adrenaline Rush
+        -- Adrenaline Rush
 		[13750] = "{type='buff';disabled=true;duration=15;anchor='damage';cooldown=300;cdDisabled=true;cdAnchor='cooldowns';class='ROGUE';}",
 		-- Preparation
 		[14185] = "{cooldown=600;cdAnchor='cooldowns';resets={26669,11305,26889,14177,36554};class='ROGUE';}",
@@ -702,7 +690,7 @@ AfflictedSpells =
 		-- Shadowstep
 		[36554] = "{type='buff';duration=3;disabled=true;anchor='buffs';cooldown=30;cdAnchor='cooldowns';class='ROGUE';}",
 		-- Premeditation
-		-- [14183] = "{type='buff';cooldown=120;cdDisabled=true;cdAnchor='cooldowns';class='ROGUE';}",
+		-- [14183] = "{cooldown=120;cdDisabled=true;cdAnchor='cooldowns';class='ROGUE';}",
 		-- Distract
 		[1725] = "{cooldown=30;cdAnchor='cooldowns';class='ROGUE';}",
 		-- Stealth
