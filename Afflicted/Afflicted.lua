@@ -284,21 +284,21 @@ local SpellCastSucceededList =
 }
 
 function Afflicted:UNIT_SPELLCAST_SUCCEEDED(event, unitToken, spellName, spellRank, ...)
-    local sourceGUID = UnitGUID(unitToken);
-    local sourceName = UnitName(unitToken);
-    local reaction = UnitReaction(unitToken, "player");
+    local sourceGUID = UnitGUID(unitToken) or "UNKNOWN_GUID"
+    local sourceName = UnitName(unitToken) or "Unknown"
+    local reaction = UnitReaction(unitToken, "player")
 
-    local spellId = SpellCastSucceededList[spellName];
-    if not spellId or sourceGUID == playerGUID or reaction > 3 then return;end
+    local spellId = SpellCastSucceededList[spellName]
+    if not spellId or sourceGUID == playerGUID or reaction > 3 then return end
 
-    local spell = self:GetSpell(spellId, spellName);
-
+    local spell = self:GetSpell(spellId, spellName)
     if ( spell and spell.resets ) then
-        self:ResetCooldowns(sourceGUID, spell.resets);
+        self:ResetCooldowns(sourceGUID, spell.resets)
     end
 
-    self:AbilityTriggered(sourceGUID, sourceName, spell, spellId);
+    self:AbilityTriggered(sourceGUID, sourceName, spell, spellId)
 end
+
 
 -- Reset spells
 function Afflicted:ResetCooldowns(sourceGUID, resets)

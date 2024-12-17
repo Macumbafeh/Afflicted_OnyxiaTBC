@@ -292,10 +292,10 @@ function Icons:CreateTimer(sourceGUID, sourceName, anchor, repeating, isCooldown
         return
     end
 
-    local id = sourceGUID .. spellID
-    if ( isCooldown ) then
-        id = id .. "CD"
-    end
+    local id = (sourceGUID or "UNKNOWN_GUID") .. spellID
+	if ( isCooldown ) then
+		id = id .. "CD"
+	end
 
     -- Grabby
     local frame = getIcon(group, id)
@@ -327,22 +327,18 @@ function Icons:CreateTimer(sourceGUID, sourceName, anchor, repeating, isCooldown
 end
 
 -- Remove a specific anchors timer by ID
-function Icons:RemoveTimerByID(anchor, id)
-    local removedTimer
-    for _, group in pairs(Icons.groups) do
-        -- Remove the icon timer
-        local removed
-        for i=#(group.active), 1, -1 do
-            if ( group.active[i].id == id ) then
-                removed = true
-                releaseIcon(group, i)
-            end
-        end
+function Icons:RemoveTimerByID(id)
+    local removedTimer = false
 
-        if ( removed ) then
-            -- Reposition everything
-            repositionTimers(group)
-            removedTimer = true
+    -- Loop through all icon groups
+    for _, group in pairs(Icons.groups) do
+        for i = #(group.active), 1, -1 do
+            -- Compare the timer IDs
+            if group.active[i].id == id then
+                releaseIcon(group, i)
+                repositionTimers(group)
+                removedTimer = true
+            end
         end
     end
 
