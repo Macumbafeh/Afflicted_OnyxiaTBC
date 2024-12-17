@@ -351,13 +351,33 @@ end
 
 -- Spell faded early, so announce that
 function Afflicted:AbilityEarlyFade(sourceGUID, sourceName, spellData, spellID, spellName, announce)
-    if ( spellData and not spellData.disabled and spellData.type == "buff" ) then
-        local removed = self[self.db.profile.anchors[spellData.anchor].display]:RemoveTimerByID(sourceGUID .. spellID)
-        if ( removed and announce ) then
-            self:Announce(spellData, self.db.profile.anchors[spellData.anchor], "endMessage", spellID, spellName, sourceName)
+    if spellData and not spellData.disabled and spellData.type == "buff" then
+        -- Safety checks for anchor and display
+        if not spellData.anchor then
+            self:Print("Error: spellData.anchor is missing for spellID: " .. tostring(spellID))
+            return
+        end
+
+        local anchor = self.db.profile.anchors[spellData.anchor]
+        if not anchor then
+            self:Print("Error: Anchor '" .. tostring(spellData.anchor) .. "' not found in profile for spellID: " .. tostring(spellID))
+            return
+        end
+
+        local display = anchor.display
+        if not display or not self[display] then
+            self:Print("Error: Display '" .. tostring(display) .. "' is invalid for anchor '" .. tostring(spellData.anchor) .. "' and spellID: " .. tostring(spellID))
+            return
+        end
+
+        -- Attempt to remove timer
+        local removed = self[display]:RemoveTimerByID(sourceGUID .. spellID)
+        if removed and announce then
+            self:Announce(spellData, anchor, "endMessage", spellID, spellName, sourceName)
         end
     end
 end
+
 
 -- Timer faded naturally
 function Afflicted:AbilityEnded(sourceGUID, sourceName, spellData, spellID, spellName, isCooldown)

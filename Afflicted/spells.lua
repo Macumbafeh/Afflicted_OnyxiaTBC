@@ -1,7 +1,7 @@
 ---@class AfflictedSpells
 AfflictedSpells =
 {
-    version = 7;
+    version = 8;
     spells = {
         -- Death Knight
         -- Strangulate
@@ -259,7 +259,7 @@ AfflictedSpells =
 		-- Inner Focus
 		[14751] = "{cooldown=180;cdAnchor='cooldowns';class='PRIEST';}",
 		-- Elune's Grace
-		[2651] = "{type='buff';duration=15;cooldown=180;cdAnchor='cooldowns';class='PRIEST';}",
+		[2651] = "{type='buff';duration=15;anchor='buffs';cooldown=180;cdAnchor='cooldowns';class='PRIEST';}",
 		-- Devouring Plague
 		[2944] = 25467,
         [19276] = 25467,
@@ -659,7 +659,7 @@ AfflictedSpells =
        -- Adrenaline Rush
 		[13750] = "{type='buff';disabled=true;duration=15;anchor='damage';cooldown=300;cdDisabled=true;cdAnchor='cooldowns';class='ROGUE';}",
 		-- Preparation
-		[14185] = "{cooldown=600;cdAnchor='cooldowns';resets={26669,11305,26889,14177,36554,14183};class='ROGUE';}",
+		[14185] = "{cooldown=600;cdAnchor='cooldowns';resets={26669,11305,26889,14177,36554};class='ROGUE';}",
 		-- Cloak of Shadows
 		[31224] = "{type='buff';duration=5;anchor='defenses';cooldown=60;cdAnchor='cooldowns';class='ROGUE';}",
 		-- Vanish
@@ -702,7 +702,7 @@ AfflictedSpells =
 		-- Shadowstep
 		[36554] = "{type='buff';duration=3;disabled=true;anchor='buffs';cooldown=30;cdAnchor='cooldowns';class='ROGUE';}",
 		-- Premeditation
-		[14183] = "{type='buff';cooldown=120;cdDisabled=true;cdAnchor='cooldowns';class='ROGUE';}",
+		-- [14183] = "{type='buff';cooldown=120;cdDisabled=true;cdAnchor='cooldowns';class='ROGUE';}",
 		-- Distract
 		[1725] = "{cooldown=30;cdAnchor='cooldowns';class='ROGUE';}",
 		-- Stealth
@@ -713,26 +713,27 @@ AfflictedSpells =
         -- Misc
         -- PvP Trinket
         [59752] = 42292,
-        [42292] = "{cooldown=120;cdAnchor='defenses'}",
+        [42292] = "{cooldown=120;cdAnchor='cooldowns'}",
         -- Escape Artist
-        [20589] = "{cooldown=105;cdAnchor='defenses'}",
+        [20589] = "{cooldown=105;cdAnchor='cooldowns'}",
 		-- Perception
-		[20600] = "{type='buff';duration=20;cooldown=180;cdAnchor='defenses';}",
+		[20600] = "{type='buff';duration=20;anchor='buffs';cooldown=180;cdAnchor='cooldowns';}",
+		
 		-- Will of the Forsaken
-		[7744] = "{type='buff';duration=5;cooldown=120;cdAnchor='defenses';}",
+		[7744] = "{type='buff';duration=5;anchor='buffs';cooldown=120;cdAnchor='cooldowns';}",
 		-- Stoneform
-		[20594] = "{type='buff';duration=8;cooldown=180;cdAnchor='defenses';}",
+		[20594] = "{type='buff';duration=8;anchor='buffs';cooldown=180;cdAnchor='cooldowns';}",
 		-- War Stomp
-		[20549] = "{type='buff';duration=2;cooldown=120;cdAnchor='defenses';}",
+		[20549] = "{type='buff';duration=2;anchor='buffs';cooldown=120;cdAnchor='cooldowns';}",
 		-- Chastise
 		[44041] = 44047, 
 		[44043] = 44047, 
 		[44044] = 44047, 
 		[44045] = 44047, 
 		[44046] = 44047, 
-		[44047] = "{type='buff';duration=2;cooldown=30;cdAnchor='defenses';}",
+		[44047] = "{type='buff';duration=2;anchor='buffs';cooldown=30;cdAnchor='cooldowns';}",
 		-- Arcane Torrent
-		[28730] = "{type='buff';duration=2;cooldown=120;cdAnchor='defenses';}",
+		[28730] = "{type='buff';duration=2;anchor='buffs';cooldown=120;cdAnchor='cooldowns';}",
     };
 
     totems = {
