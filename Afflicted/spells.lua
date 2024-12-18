@@ -144,7 +144,7 @@ AfflictedSpells =
         -- Berserk
         [50334] = "{duration=15;anchor='damage';cooldown=180;cdDisabled=true;cdAnchor='cooldowns';class='DRUID';}",
         -- Frenzied Regeneration
-        [22842] = "{duration=10;anchor='defenses';cooldown=180;cdDisabled=true;cdAnchor='cooldowns';class='DRUID';}",
+        -- [22842] = "{duration=10;anchor='defenses';cooldown=180;cdDisabled=true;cdAnchor='cooldowns';class='DRUID';}",
         -- Feral Charge - Bear
         [16979] = "{cooldown=15;cooldownName='feral';cdAnchor='interrupts';class='DRUID';}",
         -- Feral Charge - Cat
